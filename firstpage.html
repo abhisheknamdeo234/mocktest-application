@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        h1{
+            background-color: hsl(123, 83%, 36%);
+            padding: 10px;
+            border: 1px solid #330f69;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<title>Mocktest</title>
+
+<body bgcolor="lightblue">
+    <div id="page">
+        <h1>Welcome to Mocktest page</h1>
+        <h3> Read Our Insructions</h3>
+        <a href="../static/mocktest.pdf">Click Me</a>
+    </div>
+    <table>
+        <tr>
+            <video width="600" height="400" controls autoplay>
+                <source src="../static/Addvideo.mp4" type="video/mp4">
+            </video>
+        </tr>
+    </table>
+
+        <div>
+            <video width="600" height="400" controls autoplay>
+                <source src="../static/Addvideo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+
+        <form id="form1" action="/submit" method="post">
+            <div id="testDiv">
+
+            </div>
+            <br />
+            <br />
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Full Name" />
+            <label for="fname">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Address" />
+            <label for="fname">Mobile:</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Mobile number" />
+            <label for="fname">Alternate Mobile no.:</label>
+            <input type="text" id="alternate" name="alternate" placeholder="Alternate mobile number" />
+
+            <button type="submit">Submit</button>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #button {
+            font-size: 15px;
+            background-color: aliceblue;
+            padding: 10px 24px;
+
+        }
+
+        #mobile {
+            font-size: 15px;
+            background-color: aliceblue;
+            padding: 10px 24px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<title>Mocktest</title>
+
+<body bgcolor="lightblue">
+
+
+    <form id="form1" action="/submit" method="post">
+        <div id="testDiv">
+
+        </div>
+        <br />
+        <br />
+        <label for="fname">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Mobile number" required/><br>
+        <button type="submit" id="button">Submit</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $.ajax({
+            url: '/get-questions',
+            method: 'get',
+            success: function (res) {
+                res.forEach((element, index) => {
+                    // console.log(element)
+                    var el = `<table style="width:100%;text-align:left" id="${element[0]}">
+                        <tr>
+                            <th colspan="2">${element[1]}?</th>
+                        </tr>
+                        <tr>
+                            <td style="width:50%"><input type="radio" id="a${element[0]}" name="${element[0]}" value="${element[0]}-A required">
+                                <label for="a${element[0]}">${element[2]}</label></td>
+                            <td style="width:50%"><input type="radio" id="b${element[0]}" name="${element[0]}" value="${element[0]}-B required">
+                                <label for="b${element[0]}">${element[3]}</label> </td>
+                        </tr>
+                        <tr>
+                            <td style="width:50%"><input type="radio" id="c${element[0]}" name="${element[0]}" value="${element[0]}-C required">
+                                <label for="c${element[0]}">${element[4]}</label> </td>
+                            <td style="width:50%"><input type="radio" id="d${element[0]}" name="${element[0]}" value="${element[0]}-D required">
+                                <label for="d${element[0]}">${element[5]}</label> </td>
+                        </tr>
+                    </table>
+                    <br/><br/>`
+                    document.getElementById('testDiv').innerHTML += el;
+
+                });
+            }
+        })
+
+
+
+    </script>
+
+</body>
+
+
+</html>
